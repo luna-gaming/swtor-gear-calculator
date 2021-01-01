@@ -1,18 +1,18 @@
 var augments = {
   "none": {
-	"rating": 0,
+    "rating": 0,
     "endurance": 0,
     "power": 0,
     "tertiary": 0
   },
   "Augment 73": {
-	"rating": 276,
+    "rating": 276,
     "endurance": 126,
     "power": 126,
     "tertiary": 95
   },
   "Augment 74": {
-	"rating": 286,
+    "rating": 286,
     "endurance": 144,
     "power": 144,
     "tertiary": 108

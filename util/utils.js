@@ -94,21 +94,21 @@ function drawResults(crit, power, endurance, results) {
         </div>
         <div class="right">
           <span>Alacrity Enhancements</span> (choose 1 row)<br>
-          <table id="alacrityTable"></table>
+          <table id="alacrityTable${i}"></table>
           <hr>
           <span>Accuracy Enhancments</span> (choose 1 row)<br>
-          <table id="accuracyTable"></table>
+          <table id="accuracyTable${i}"></table>
         </div>
         <div class="clear"></div>
       </div>
     </div>
     <br style="margin-top: 6px">
     `;
-    var alacrityTable = document.getElementById("alacrityTable");
+    var alacrityTable = document.getElementById("alacrityTable" + i);
     var alacrityOptions = result.alacrityResult.options;
     drawEnhancementTable(alacrityTable, alacrityOptions);
   
-    var accuracyTable = document.getElementById("accuracyTable");
+    var accuracyTable = document.getElementById("accuracyTable" + i);
     var accuracyOptions = result.accuracyResult.options;
     drawEnhancementTable(accuracyTable, accuracyOptions);       
   }
@@ -118,9 +118,13 @@ function drawEnhancementTable(table, options) {
   for(var j in options){
     var row = document.createElement("tr");
     var cell = document.createElement("td");
-    cell.innerHTML = (parseInt(j)+1)+":";
-    row.append(cell);
     var opt = options[j];
+    if(opt.length == 0) {
+      cell.innerHTML = "None";
+    } else {
+      cell.innerHTML = (parseInt(j)+1)+":";
+    }
+    row.append(cell);
     for(var id in opt) {
       cell = document.createElement("td");
       cell.innerHTML = opt[id].name + (id == opt.length-1?"":",");

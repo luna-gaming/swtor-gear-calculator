@@ -27,9 +27,9 @@ function calculate() {
       var numAugments = 14 - accuracy.numAugments - alacrity.numAugments;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
-	  
-	  var critResult = new Result(
-	      new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
+      
+      var critResult = new Result(
+          new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
       // check if valid configuration
       if (numEnhancements < 0 || numAugments < 0 || numImplants < 0) {
@@ -37,11 +37,11 @@ function calculate() {
       }
 
       var newCrit = (numEnhancements*critEnhancement[TERTIARY]) + (numImplants*implant[TERTIARY]) + 
-	      (numAugments*augments[augmentType][TERTIARY]) + (crystals*41) + (usingStim ? 109 : 0);
+          (numAugments*augments[augmentType][TERTIARY]) + (crystals*41) + (usingStim ? 109 : 0);
       var newPower = (numEnhancements*critEnhancement[POWER]) + (numImplants*implant[POWER]) + 
-	      (numAugments*augments[augmentType][POWER]) + accuracy.power + alacrity.power;
+          (numAugments*augments[augmentType][POWER]) + accuracy.power + alacrity.power;
       var newEndurance = (numEnhancements*critEnhancement[ENDURANCE]) + (numImplants*implant[ENDURANCE]) + 
-	      (numAugments*augments[augmentType][ENDURANCE]) + accuracy.endurance + alacrity.endurance;
+          (numAugments*augments[augmentType][ENDURANCE]) + accuracy.endurance + alacrity.endurance;
 
       // prioritize crit then power then endurance
       if (newCrit > crit || (newCrit == crit && (newPower > power || (newPower == power && newEndurance > endurance)))) {
