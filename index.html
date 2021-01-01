@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="./util/objects.js"></script>
+  <script src="./util/utils.js"></script>
+  <script src="./data/accuracy.js"></script>
+  <script src="./data/alacrity.js"></script>
+  <script src="./data/crit.js"></script>
+  <script src="./data/other.js"></script>
+  <script src="./calculator.js"></script>
+  <script src="./eventHandlers.js"></script>
+</head>
+
+<body onLoad="onLoad()">
+  <div id="form" class="section">
+	<table id="textTable">
+	  <tr>
+		<td>ACCURACY</td>
+		<td><input id="accuracy"/>
+	  </tr>
+	  <tr>
+	    <td>ALACRITY</td>
+		<td><input id="alacrity"/></td>
+	  </tr>
+	</table>
+	<hr>
+	CRIT ENHANCMENT<br style="margin-top: 4px">
+	<select id="crit"></select><br style="margin-top: 10px">
+	AUGMENT TYPE<br style="margin-top: 4px">
+	<select id="augment"></select>
+	<hr>
+	<label id="stimContainer" for="stim">
+	  <input id="stim" type="checkbox" checked="true">
+	  USING PROFICIENT STIM?&nbsp;&nbsp;<div id="stimCheckbox"><div id="stimCheckmark"></div></div>
+	</label>
+	<hr>
+	<input id="calculate" type="button" value="CALCULATE" onClick="onClick()"></input>
+	<div id="results"></div>
+  </div>
+  <div id="loadouts"></div>
+</body>
+
+</html>
