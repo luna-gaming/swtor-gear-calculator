@@ -60,9 +60,13 @@ function drawResults(crit, power, endurance, results) {
   <hr>
   <table id="resultTable">
     <tr><td>Crit:</td><td>${crit}</td></tr>
-    <tr><td>Power:</td><td>${power}</td></tr>
-    <tr><td>Endurance:</td><td>${endurance}</td></tr>
+    <tr><td>Power*:</td><td>${power}</td></tr>
+    <tr><td>Endurance*:</td><td>${endurance}</td></tr>
     <tr><td>Loadouts:</td><td>${results.length}</td></tr>
+  </table>
+  <br style="margin-top: 10px">
+  <table id="disclaimer">
+    <tr><td>*</td><td>Does not include stats from mods or armorings.</td></tr>
   </table>
   `;
 
@@ -71,7 +75,6 @@ function drawResults(crit, power, endurance, results) {
   for(var i in results) {
     result = results[i];
   
-    // start loadout section
     loadoutsDiv.innerHTML += `
     <div class="section">
       <span>LOADOUT ${parseInt(i)+1}<hr></span>
