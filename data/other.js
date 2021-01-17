@@ -16,6 +16,12 @@ var augments = {
     "endurance": 144,
     "power": 144,
     "tertiary": 108
+  },
+  "Augment 77": {
+    "rating": 300,
+    "endurance": 171,
+    "power": 171,
+    "tertiary": 130
   }
 };
 
