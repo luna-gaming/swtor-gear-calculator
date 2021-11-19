@@ -23,9 +23,8 @@ function calculate() {
       var alacrity = alacrityOptions[alacrityId];
 
       // determine crit layout
-      var numEnhancements = 7 - accuracy.numEnhancements - alacrity.numEnhancements;
-      /*var numAugments = (augmentType == "none" ? 0 : 14) - 
-          accuracy.numAugments - alacrity.numAugments;*/
+      var numAugments = (augmentType == "none" ? 0 : 14) - 
+          accuracy.numAugments - alacrity.numAugments;
       var numAugments = 7;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
@@ -34,7 +33,7 @@ function calculate() {
           new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
       // check if valid configuration
-      if (numEnhancements < 0 || numAugments < 0 || numImplants < 0 || (alacrity.numAugments + accuracy.numAugments + numAugments) > 14) {
+      if (numEnhancements < 0 || numAugments < 0 || numImplants < 0) {
         continue;
       }
       
@@ -79,7 +78,7 @@ function getStatOptions(enhancements, goal, augmentType) {
     var maxAugments = augmentType == "none" ? 0 : 7;
     for (var numAugments = 0; numAugments <= maxAugments; numAugments++) {
       // calculated goal enhancements need to reach and number of enhancements required
-      var newGoal = goal - (/*augments[augmentType][TERTIARY]*/108 * numAugments) - (implant[TERTIARY] * numImplants);
+      var newGoal = goal - (augments[augmentType][TERTIARY] * numAugments) - (implant[TERTIARY] * numImplants);
       var numEnhancements = Math.max(Math.ceil(newGoal / maxTertiary), 0);
 
       // initialize result parameters
