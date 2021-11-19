@@ -36,6 +36,8 @@ function calculate() {
       if (numEnhancements < 0 || numAugments < 0 || numImplants < 0) {
         continue;
       }
+      
+      numAugments = 7;
 
       var newCrit = (numEnhancements*critEnhancement[TERTIARY]) + (numImplants*implant[TERTIARY]) + 
           (numAugments*augments[augmentType][TERTIARY]) + (crystals*41) + (usingStim ? 109 : 0);
@@ -75,7 +77,7 @@ function getStatOptions(enhancements, goal, augmentType) {
   // loop 0-3 implants/ear piece
   for(var numImplants = 0; numImplants <= 3; numImplants++) {
     // loop 0-14 augments if augments are used
-    var maxAugments = augmentType == "none" ? 0 : 14;
+    var maxAugments = augmentType == "none" ? 0 : 7;
     for (var numAugments = 0; numAugments <= maxAugments; numAugments++) {
       // calculated goal enhancements need to reach and number of enhancements required
       var newGoal = goal - (/*augments[augmentType][TERTIARY]*/108 * numAugments) - (implant[TERTIARY] * numImplants);
