@@ -23,9 +23,9 @@ function calculate() {
       var alacrity = alacrityOptions[alacrityId];
 
       // determine crit layout
+      var numEnhancments = 7 - accuracy.numEnhancments - alacrity.numEnhancements;
       var numAugments = (augmentType == "none" ? 0 : 14) - 
           accuracy.numAugments - alacrity.numAugments;
-      var numAugments = 7;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
             
@@ -75,7 +75,7 @@ function getStatOptions(enhancements, goal, augmentType) {
   // loop 0-3 implants/ear piece
   for(var numImplants = 0; numImplants <= 3; numImplants++) {
     // loop 0-14 augments if augments are used
-    var maxAugments = augmentType == "none" ? 0 : 7;
+    var maxAugments = augmentType == "none" ? 0 : 14;
     for (var numAugments = 0; numAugments <= maxAugments; numAugments++) {
       // calculated goal enhancements need to reach and number of enhancements required
       var newGoal = goal - (augments[augmentType][TERTIARY] * numAugments) - (implant[TERTIARY] * numImplants);
