@@ -34,7 +34,7 @@ function calculate() {
           new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
       // check if valid configuration
-      if (numEnhancements < 0 || numAugments < 0 || numImplants < 0) {
+      if (numEnhancements < 0 || numAugments < 0 || numImplants < 0 || (alacrity.numAugments + accuracy.numAugments + numAugments) > 14) {
         continue;
       }
       
