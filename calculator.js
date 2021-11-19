@@ -23,7 +23,7 @@ function calculate() {
       var alacrity = alacrityOptions[alacrityId];
 
       // determine crit layout
-      var numEnhancments = 7 - accuracy.numEnhancments - alacrity.numEnhancements;
+      var numEnhancements = 7 - accuracy.numEnhancments - alacrity.numEnhancements;
       var numAugments = (augmentType == "none" ? 0 : 14) - 
           accuracy.numAugments - alacrity.numAugments;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
