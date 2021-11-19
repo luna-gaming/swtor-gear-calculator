@@ -29,6 +29,8 @@ function calculate() {
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
       
+      numAugments = 7;
+      
       var critResult = new Result(
           new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
@@ -37,8 +39,6 @@ function calculate() {
         continue;
       }
       
-      numAugments = 7;
-
       var newCrit = (numEnhancements*critEnhancement[TERTIARY]) + (numImplants*implant[TERTIARY]) + 
           (numAugments*augments[augmentType][TERTIARY]) + (crystals*41) + (usingStim ? 109 : 0);
       var newPower = (numEnhancements*critEnhancement[POWER]) + (numImplants*implant[POWER]) + 
