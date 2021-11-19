@@ -24,13 +24,12 @@ function calculate() {
 
       // determine crit layout
       var numEnhancements = 7 - accuracy.numEnhancements - alacrity.numEnhancements;
-      var numAugments = (augmentType == "none" ? 0 : 14) - 
-          accuracy.numAugments - alacrity.numAugments;
+      /*var numAugments = (augmentType == "none" ? 0 : 14) - 
+          accuracy.numAugments - alacrity.numAugments;*/
+      var numAugments = 7;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
-      
-      numAugments = 7;
-      
+            
       var critResult = new Result(
           new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
