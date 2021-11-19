@@ -23,12 +23,12 @@ function calculate() {
       var alacrity = alacrityOptions[alacrityId];
 
       // determine crit layout
-      var numEnhancements = 7 - accuracy.numEnhancments - alacrity.numEnhancements;
+      var numEnhancements = 7 - accuracy.numEnhancements - alacrity.numEnhancements;
       var numAugments = (augmentType == "none" ? 0 : 14) - 
           accuracy.numAugments - alacrity.numAugments;
       var numImplants = 3 - accuracy.numImplants - alacrity.numImplants;
       var crystals = 2;
-            
+      
       var critResult = new Result(
           new Layout(numEnhancements, numAugments, numImplants), new EnhancementOptions());
 
@@ -36,7 +36,7 @@ function calculate() {
       if (numEnhancements < 0 || numAugments < 0 || numImplants < 0) {
         continue;
       }
-      
+
       var newCrit = (numEnhancements*critEnhancement[TERTIARY]) + (numImplants*implant[TERTIARY]) + 
           (numAugments*augments[augmentType][TERTIARY]) + (crystals*41) + (usingStim ? 109 : 0);
       var newPower = (numEnhancements*critEnhancement[POWER]) + (numImplants*implant[POWER]) + 
