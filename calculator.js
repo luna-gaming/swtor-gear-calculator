@@ -147,7 +147,7 @@ function loopFunction(augmentType, enhancements, enhancementOptions, layout, tar
     }
   } else {
     // loop through the list of enhancement indexes, starting at the index of the previous enhancement
-    for(var i = values[index]; i <= (targetIndexSum/2)-values[index]; i++) {
+    for(var i = values[index]; i <= Math.ceil(targetIndexSum/2.0)-values[index]; i++) {
       // copy the array of indexes and add the new index to the copy
       var newValues = [...values];
       newValues.push(i);
